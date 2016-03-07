@@ -42,7 +42,7 @@ public class 华为购物单￥又依赖的背包问题￥完整代码 {
                 }
             }
         }
-        //将顺序有序的加入
+        //将顺序有误的加入
         for(int i=0;i<extraItems.size();i++) {
             Item item=extraItems.get(i);
             int id=item.id;

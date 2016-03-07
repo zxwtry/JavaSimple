@@ -1,5 +1,9 @@
 package dataStructures;
-
+/*
+ * KMP算法是对模式串进行分析之后做出的改进
+ * 会有一个next数组用于存储当模式串在这个位置匹配失败之后进行的操作
+ * 
+ */
 public class 查KMP {
 	private static int[] getNext(char[] c) {
 		int[] next = new int[c.length];

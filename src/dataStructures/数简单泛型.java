@@ -1,5 +1,7 @@
 package dataStructures;
-
+/*
+ * 泛型一般都是使用<T>或者是<T extends Comparable <? super T>>来进行标识
+ */
 public class 数简单泛型 {
 	static class MySort<T> {
 		public static<T extends Comparable <? super T>> void sort (T[] data) {

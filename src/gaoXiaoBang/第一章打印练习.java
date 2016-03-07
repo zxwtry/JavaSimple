@@ -1,6 +1,7 @@
 package gaoXiaoBang;
 
 public class 第一章打印练习 {
+	//在控制台上打印出不同的形状
 	private final static int RANGE_$ = '$'-' ';
 	private final static int RANGE_0 = 0;
 	private final static int RANGE_NEXTLINE = '\n'-' ';

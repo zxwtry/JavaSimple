@@ -1,18 +1,20 @@
-public class SOF{
+package gaoXiaoBang;
+
+public class µÚÒ»ÕÂ´òÓ¡Á·Ï° {
 	private final static int RANGE_$ = '$'-' ';
 	private final static int RANGE_0 = 0;
 	private final static int RANGE_NEXTLINE = '\n'-' ';
  	public static void main(String args[]) {
-		// question_1();
-		// question_2();
-		// question_3();
-		// question_4(7);
-		// question_5(7);
-		// question_6(6);
-		// question_7(9);
-		// question_8(5);
-		// question_9();
-		// question_10();
+		 question_1();
+		 question_2();
+		 question_3();
+		 question_4(7);
+		 question_5(7);
+		 question_6(6);
+		 question_7(9);
+		 question_8(5);
+		 question_9();
+		 question_10();
 	}
 	private static void question_1() {
 		RECTANGLE(7,5,0,true);

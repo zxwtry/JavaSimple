@@ -9,14 +9,32 @@ public class 题27二叉搜索树与双向链表 {
 		 * 				6
 		 * 			4       8
 		 * 		  3   5   7   9
+		 * 
 		 * 前序：6, 4, 3, 5, 8, 7, 9
 		 * 中序：3, 4, 5, 6, 7, 8, 9  
 		 *  
 		 */
-		int[] preOrderArray = {6, 4, 3, 5, 8, 7, 9}, inOrderArray = {3, 4, 5, 6, 7, 8, 9 };
+//		int[] preOrderArray = {6, 4, 3, 5, 8, 7, 9}, inOrderArray = {3, 4, 5, 6, 7, 8, 9 };
+		
+		/*
+		 * 					6
+		 *        		  5
+		 * 				4
+		 * 			  3
+		 * 			2
+		 * 		  1
+		 * 
+		 * 前序： 6, 5, 4, 3, 2, 1
+		 * 中序： 1, 2, 3, 4, 5, 6
+		 */
+		int[] preOrderArray = {6, 5, 4, 3, 2, 1}, inOrderArray = {1, 2, 3, 4, 5, 6};
 		try {
 			BinaryTreeNodeBST root = construct(preOrderArray, inOrderArray);
-			
+			BinaryTreeNodeBST listNodeHead = getTheListHead (root);
+			while (listNodeHead != null) {
+				System.out.print(listNodeHead.data+" ");
+				listNodeHead = listNodeHead.right;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -68,5 +86,27 @@ public class 题27二叉搜索树与双向链表 {
 									    inOrderArray, inRootIndex+1,     inEndIndex);
 		return root;
 	}
-	
-}
+	private static BinaryTreeNodeBST getTheListHead (BinaryTreeNodeBST root) {
+		if (root == null)   return null;
+		IncludeAnNode ian = new IncludeAnNode();
+		BinaryTreeNodeBST travelList = null;
+		convertNode (root, ian);
+		travelList = ian.node;
+		while (travelList != null && travelList.left != null)
+			travelList = travelList.left;
+		return travelList;
+	}
+	private static void convertNode (BinaryTreeNodeBST root, IncludeAnNode ian) {
+		if (root == null)   return;
+		BinaryTreeNodeBST currentNode = root;
+		convertNode (root.left, ian);
+		currentNode.left = ian.node;
+		if (ian.node != null)
+			ian.node.right = currentNode;
+		ian.node = currentNode;
+		convertNode (root.right, ian);
+	}
+	static class IncludeAnNode {
+		BinaryTreeNodeBST node;
+	}
+ }

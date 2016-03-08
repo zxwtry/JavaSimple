@@ -40,9 +40,9 @@ public class 算法57快速排序_标尺选择 {
 		data[begin] = tempBeginData;
 		
 		while (begin < end) {
-			while (begin<end && data[end]>pivot)   --end;
+			while (begin<end && data[end]>=pivot)   --end;
 			data[begin] = data[end];
-			while (begin<end && data[begin]<pivot)  ++ begin;
+			while (begin<end && data[begin]<=pivot)  ++ begin;
 			data[end] = data[begin];
 		}
 		data[begin] = pivot;

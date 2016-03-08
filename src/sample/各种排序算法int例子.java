@@ -18,9 +18,9 @@ public class 各种排序算法int例子 {
 		private static int partition(int[] data, int begin, int end) {
 			int pivotVal = data[begin];
 			while (begin < end) {
-				while (begin<end && data[end]>pivotVal)   --end;
+				while (begin<end && data[end]>=pivotVal)   --end;
 				data[begin] = data[end];
-				while (begin<end && data[begin]<pivotVal) ++begin;
+				while (begin<end && data[begin]<=pivotVal) ++begin;
 				data[end] = data[begin];
 			}
 			data[begin] = pivotVal;

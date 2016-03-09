@@ -41,9 +41,50 @@ public class 查KMP {
 		}
 		return -1;
 	}
+	//返回子串t在主串s第pos个字符之后的位置
+	//若不存在，则返回0
+	private static int indexKMP2 (char[] s, char[] t, int pos) {
+		int i = pos;
+		int j = i;
+		int[] next = getNext2(t);
+		while (i <= s[0] && j <= t[0]) {
+			if (0 == j || s[i] == t[j]) {
+				i ++;
+				j ++;
+			} else {
+				j = next[j];
+			}
+		}
+		if (j < t[0]) {
+			return i-t[0];
+		} else {
+			return 0;
+		}
+	}
+	private static int[] getNext2 (char[] t) {
+		int j = 0;
+		int i = 1;
+		int[] next = new int[t.length];
+		next[1] = 0;
+		while (i < t[0]) {
+			if (0 == j || t[i] == t[j]) {
+				i ++;
+				j ++;
+				if (t[i] == t[j])
+					next[i] = next[j];
+				else
+					next[i] = j;
+			} else {
+				j = next[j];
+			}
+		}
+		return next;
+	}
 	public static void main(String[] args) {
-		String s = "abcabaaabaabcac";
-		String t = "abaabcac";
-		System.out.println(indexKMP(s.toCharArray(), t.toCharArray()));
+		char[] s = " abcabaaabaabcac".toCharArray();
+		s[0] = (char)15;
+		char[] t = " abaabcac".toCharArray();
+		t[0] = (char)8;
+		System.out.println(indexKMP2(s, t, 1));
 	}
 }

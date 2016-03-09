@@ -35,28 +35,24 @@ public class 华为简答错误记录 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 		Ans a = new Ans ();
-		a.add("AAA", 123);
-		a.add("AAA", 123);
-		a.add("AAB", 123);
-		a.add("AAA", 123);
-		a.add("AAA", 123);
-		a.add("AAA", 124);
+		while (sc.hasNext()) {
+			String errorAddr = sc.next();
+			//System.out.println(errorAddr.substring(errorAddr.lastIndexOf('\\'), errorAddr.length()));
+			int errorLine = sc.nextInt();
+			a.add(errorAddr.substring(errorAddr.lastIndexOf('\\')+1, errorAddr.length()), errorLine);
+			a.printAll();
+		}
 		a.printAll();
-//		while (sc.hasNext()) {
-//			String errorAddr = sc.next();
-//			int errorLine = sc.nextInt();
-//		}
 		sc.close();
 	}
 	static class Ans {
-//		final private double GEN1 = 0.875, GEN2 = 0.125;
 		Map<Integer, Record> map = new HashMap<Integer,Record>();
 		public void add (String errorAddr, int errorLine) {
 			Record r = new Record(errorAddr, errorLine);
-			if (map.containsKey(errorAddr.hashCode()+errorLine)) {
-				++ map.get(errorAddr.hashCode()+errorLine).errorTimes;
+			if (map.containsKey(errorAddr.hashCode()+errorLine*errorLine*errorLine)) {
+				++ map.get(errorAddr.hashCode()+errorLine*errorLine*errorLine).errorTimes;
 			} else {
-				map.put(errorAddr.hashCode()+errorLine, r);
+				map.put(errorAddr.hashCode()+errorLine*errorLine*errorLine, r);
 			}
 		}
 		public void printAll () {
@@ -65,7 +61,7 @@ public class 华为简答错误记录 {
 			while (it.hasNext()) {
 				int key = it.next();
 				Record r = map.get(key);
-				System.out.println("净文件名称: "+r.errorAddr +"   行号："+r.errorLine+"   重复次数："+r.errorTimes);
+				System.out.println(r.errorAddr +" "+r.errorLine+" "+r.errorTimes);
 			}
 		}
 		static class Record {
@@ -91,7 +87,7 @@ public class 华为简答错误记录 {
 			}
 			@Override
 			public int hashCode () {
-				return this.errorAddr.hashCode()+errorLine;
+				return (int)(this.errorAddr.hashCode()+errorLine*errorLine*errorLine);
 			}
 		}
 	}

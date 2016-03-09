@@ -23,7 +23,7 @@ public class ≤ÈKMP {
 		}
 		return next;
 	}
-	private static int indexKMP (char[] s, char[] t) {
+	static int indexKMP (char[] s, char[] t) {
 		if (s == null || t == null || s.length < t.length) 
 			return -1;
 		int i = -1, j = 0;
@@ -80,11 +80,23 @@ public class ≤ÈKMP {
 		}
 		return next;
 	}
+	public static int findFirstIndex (char[] s, char[] t) {
+		return 0;
+	}
 	public static void main(String[] args) {
 		char[] s = " abcabaaabaabcac".toCharArray();
 		s[0] = (char)15;
 		char[] t = " abaabcac".toCharArray();
 		t[0] = (char)8;
-		System.out.println(indexKMP2(s, t, 1));
+		int[] next = getNext2(t);
+		for (int i = 0; i < next.length; i ++) {
+			System.out.printf("%d\t",i);
+		}
+		System.out.println();
+		for (int i = 0; i < next.length; i ++) {
+			System.out.printf("%d\t",next[i]);
+		}
+		System.out.println();
+		System.out.println(indexKMP2(s, t, 6));
 	}
 }

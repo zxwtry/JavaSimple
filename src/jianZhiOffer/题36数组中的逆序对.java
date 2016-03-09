@@ -1,4 +1,7 @@
 package jianZhiOffer;
+
+import org.junit.Test;
+
 /*
  * 在数组中的两个数字如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。
  * {7, 5, 6, 4}一共有5个逆序对，分别是(7,6) (7,5) (7,4) (6,4) (5,4)
@@ -49,4 +52,79 @@ public class 题36数组中的逆序对 {
 			copy[indexCopy--] = data[j];
 		return left+right+count;
 	}
+	
+	@Test
+	public void testMergeSort () {
+		int[] dataArray1 = {1, 2, 3, 4, 5};
+		int[] dataArray2 = {0, 0, 3, 4, 50, 51, 52};
+		int[] result = mergeSort(dataArray1, 0, dataArray1.length-1, dataArray2, 0, dataArray2.length-1);
+		for (int a : result)
+			System.out.print(a + "\t");
+		System.out.println();
+	}
+	//先写一个归并排序
+	public static int[] mergeSort (int[] dataArray1, int beginIndex1, int endIndex1,
+								     int[] dataArray2, int beginIndex2, int endIndex2) {
+		//从小到大排序
+		if (dataArray1 == null)
+			return dataArray2;
+		if (dataArray2 == null)
+			return dataArray1;
+		int[] returnArray = new int[dataArray1.length + dataArray2.length];
+		int array1Index = beginIndex1, array2Index = beginIndex2, returnIndex = 0;
+		while (array1Index<=endIndex1 && dataArray2[beginIndex2] > dataArray1[array1Index]) {
+			returnArray[returnIndex ++] = dataArray1[array1Index ++];
+		}
+		while (array2Index<=endIndex2 && dataArray1[beginIndex1] > dataArray2[array2Index]) {
+			returnArray[returnIndex ++] = dataArray2[array2Index ++];
+		}
+		while (array1Index<=endIndex1 && array2Index<=endIndex2) {
+			if (dataArray1[array1Index] < dataArray2[array2Index]) {
+				returnArray[returnIndex++] = dataArray1[array1Index ++];
+			} else {
+				returnArray[returnIndex++] = dataArray2[array2Index ++];
+			}
+		}
+		while (array1Index <= endIndex1) {
+			returnArray[returnIndex++] = dataArray1[array1Index ++];
+		}
+		while (array2Index <= endIndex2) {
+			returnArray[returnIndex++] = dataArray2[array2Index ++];
+		}
+		return returnArray;
+	}
+	//逆序对的思想就是归并排序
+	public static void findInverseNum (int[] dataArray) {
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

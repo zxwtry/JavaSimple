@@ -34,11 +34,13 @@ public class ArraysSort {
 		while (it.hasNext()) {
 			System.out.print(it.next());
 		}
-		Collections.sort(ar);
+		System.out.println();
+		Collections.sort(ar, Collections.reverseOrder());
 		it = ar.iterator();
 		while (it.hasNext()) {
 			System.out.print(it.next());
 		}
+		System.out.println();
 	}
 	static class A {
 		int[] data ;

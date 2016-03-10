@@ -1,7 +1,9 @@
 package javaSrc;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Iterator;
 
 public class ArraysSort {
 	public static void main(String[] args) {
@@ -17,8 +19,26 @@ public class ArraysSort {
 		System.out.println(c.toString());
 		System.out.println("====");
 		tools.IOUtils.printAnLongString(c.toString());
-		Arrays.sort(a, Arrays.re);
-		
+		ArrayList<Integer> ar = new ArrayList<Integer>();
+		ar.add(5);
+		ar.add(4);
+		ar.add(3);
+		ar.add(2);
+		ar.add(1);
+		ar.add(0);
+		ar.add(6);
+		ar.add(7);
+		ar.add(8);
+		ar.add(9);
+		Iterator<Integer> it = ar.iterator();
+		while (it.hasNext()) {
+			System.out.print(it.next());
+		}
+		Collections.sort(ar);
+		it = ar.iterator();
+		while (it.hasNext()) {
+			System.out.print(it.next());
+		}
 	}
 	static class A {
 		int[] data ;

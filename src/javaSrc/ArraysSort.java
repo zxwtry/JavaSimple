@@ -41,8 +41,11 @@ public class ArraysSort {
 			System.out.print(it.next());
 		}
 		System.out.println();
+//		Arrays.sort(b, Collections.reverseOrder());
+		Arrays.sort(b);
+		tools.IOUtils.printAnArray(b);
 	}
-	static class A {
+	static class A implements Comparable<Object>{
 		int[] data ;
 		public A (int n) {
 			data = new int[n];
@@ -58,6 +61,13 @@ public class ArraysSort {
 			}
 			st.append(data[i]+"\n");
 			return st.toString();
+		}
+		@Override
+		public int compareTo(Object o) {
+			if ( !(o instanceof A) )   return -1;
+			A obj = (A) o;
+			
+			return this.toString().compareTo(obj.toString());
 		}
 	}
 }

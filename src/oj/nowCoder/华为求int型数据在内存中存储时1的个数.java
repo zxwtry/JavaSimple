@@ -1,4 +1,4 @@
-package nowCoder;
+package oj.nowCoder;
 
 import java.util.Scanner;
 

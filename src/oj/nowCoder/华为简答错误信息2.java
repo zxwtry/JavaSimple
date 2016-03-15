@@ -1,4 +1,4 @@
-package nowCoder;
+package oj.nowCoder;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

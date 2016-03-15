@@ -1,4 +1,4 @@
-package nowCoder;
+package oj.nowCoder;
 
 import java.util.ArrayList;
 import java.util.HashMap;

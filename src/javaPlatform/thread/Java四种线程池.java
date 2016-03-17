@@ -1,5 +1,10 @@
 package javaPlatform.thread;
 
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.SoftReference;
+import java.lang.ref.WeakReference;
+
+import org.junit.Test;
 
 /*
 
@@ -110,6 +115,39 @@ public class Java四种线程池 {
 				}
 			});
 		}
+	}
+	
+}
+
+class M extends tools.A {
+
+	@SuppressWarnings("unchecked")
+	@Override
+	protected void a() {
+		// TODO Auto-generated method stub
+		SoftReference<Integer> [] p = new SoftReference[100];
+		p[1] = new SoftReference<Integer>(new Integer(1));
+		if (p != null) 
+			System.out.println("p is not null");
+				
+		ReferenceQueue<String> myQueue = new ReferenceQueue<String>();
+		WeakReference<String> str = new WeakReference<String>("string", myQueue);
+		
+		System.gc();
+		System.runFinalization();
+		
+		if (myQueue.poll() != null)
+			System.out.println("myQueue has an Object");
+		
+		if (str != null)
+			System.out.println("str is not null");
+		
+		System.runFinalization();
+	}
+	
+	@Test
+	public void test () {
+		new M().a();
 	}
 	
 }

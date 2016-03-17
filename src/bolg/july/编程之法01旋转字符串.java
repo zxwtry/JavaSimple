@@ -1,5 +1,6 @@
 package bolg.july;
 
+
 /*
 
 给定一个字符串，要求把字符串前面的若干个字符移动到字符串的尾部，
@@ -13,6 +14,7 @@ public class 编程之法01旋转字符串 {
 	public static void main(String[] args) {
 		String s = "ABCDEFG";
 		System.out.println(leftRotateString(s.toCharArray(), 4));
+		
 	}
 	
 	private static String leftRotateString(char[] c, int indexOfMove) {

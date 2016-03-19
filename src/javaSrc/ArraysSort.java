@@ -9,16 +9,18 @@ public class ArraysSort {
 	public static void main(String[] args) {
 		int[] a = {2, 4, 6, 8, 1, 3, 5, 7 , 9, 0};
 		Arrays.sort(a);
-		tools.IOUtils.printAnArray(a);
+		tools.IOUtils.print(a);
 		A[] b = new A[10];
 		for (int i = 0 ;i < b.length; i ++)
 			b[i] = new A(i+1);
-		tools.IOUtils.printAnArray(b);
+		tools.IOUtils.print(b);
 		A c = new A(100);
+		String s = "0123456789012345678901234567890123456789012345678901234567890123456789";
+		tools.IOUtils.printLong(s);
 		System.out.println("====");
-		System.out.println(c.toString());
+		tools.IOUtils.printLong(c.toString());
 		System.out.println("====");
-		tools.IOUtils.printAnLongString(c.toString());
+		tools.IOUtils.print(c.toString());
 		ArrayList<Integer> ar = new ArrayList<Integer>();
 		ar.add(5);
 		ar.add(4);
@@ -43,7 +45,7 @@ public class ArraysSort {
 		System.out.println();
 //		Arrays.sort(b, Collections.reverseOrder());
 		Arrays.sort(b);
-		tools.IOUtils.printAnArray(b);
+		tools.IOUtils.print(b);
 	}
 	static class A implements Comparable<Object>{
 		int[] data ;

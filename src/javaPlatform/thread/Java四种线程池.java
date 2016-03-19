@@ -119,7 +119,7 @@ public class Java四种线程池 {
 	
 }
 
-class M extends tools.A {
+class M extends A {
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -150,4 +150,9 @@ class M extends tools.A {
 		new M().a();
 	}
 	
+}
+
+
+abstract class A {
+	abstract protected void a ();
 }

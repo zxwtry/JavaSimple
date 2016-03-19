@@ -1,4 +1,4 @@
-package blog.random;
+package book.offer;
 /*
 
 数组dataArray 从0到mid-1是升序的，从mid到len-1也是有序的

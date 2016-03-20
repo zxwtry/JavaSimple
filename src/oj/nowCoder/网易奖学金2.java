@@ -51,7 +51,7 @@ public class ÍøÒ×½±Ñ§½ð2 {
 		}
 		
 	}
-	static int select (int c) {
+	static long select (long c) {
 		for (int i = 0 ; i < num; i ++) {
 			int se = a[i].ava;
 			if (se > need)

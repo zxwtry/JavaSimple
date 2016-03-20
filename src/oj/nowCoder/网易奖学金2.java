@@ -1,12 +1,14 @@
 package oj.nowCoder;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 //题目意思如上题所示
 public class 网易奖学金2 {
 	private static int num, full, need;
 	private static A[] a;
-	static class A {
+	static class A implements Comparable <A>{
 		int ava, pay;
 		public A (int ava, int pay) {
 			this.ava = ava;
@@ -14,6 +16,10 @@ public class 网易奖学金2 {
 		}
 		public String toString () {
 			return String.format("%d %d\t", ava, pay);
+		}
+		@Override
+		public int compareTo(A o) {
+			return pay - o.pay;
 		}
 	}
 	public static void main(String[] args) {
@@ -27,11 +33,23 @@ public class 网易奖学金2 {
 				a[i] = new A (full - in.nextInt(), in.nextInt());
 				need  -= full - a[i].ava;
 			}
-			sort(0 , num- 1);
-//			print();
+			Arrays.sort(a);
+//			sort(0 , num- 1);
+			print();
 			System.out.println(select(0));
 		}
 		in.close();
+	}
+	
+	
+	
+	static class AA  implements Comparator <A>{
+
+		@Override
+		public int compare(A a0, A a1) {	
+			return a0.pay - a1.pay;
+		}
+		
 	}
 	static int select (int c) {
 		for (int i = 0 ; i < num; i ++) {
@@ -68,4 +86,5 @@ public class 网易奖学金2 {
 		for (int i = 0; i < a.length; i ++)
 			System.out.print(a[i]);
 	}
+	
 }

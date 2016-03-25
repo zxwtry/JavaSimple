@@ -62,6 +62,7 @@ public class 用HashMap统计出现次数 {
 	}
 	
 	public static void main (String[] args) {
+		
 		final String str = "AAAAABBBBBFFFFFGGGGGG";
 		System.out.println(getMaxChar(buildMap(str.toCharArray())));
 	}

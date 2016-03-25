@@ -3,7 +3,7 @@ package blog.random;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
+// 当然就是使用hash统计
 public class 用HashMap统计出现次数 {
 	public static Map<String, Integer> buildMap (String[] strArr) {
 		if (strArr == null) {

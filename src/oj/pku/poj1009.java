@@ -1,7 +1,9 @@
 package oj.pku;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Scanner;
 public class poj1009 {
 	static ArrayList<Integer> numVal,numTim;
 	static int n,m,ans[]=new int[2];

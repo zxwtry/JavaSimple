@@ -13,9 +13,9 @@ right: 指向本节点的“弟弟”
 
 package gaoXiaoBang;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class 第二章再谈菜单 {
 	public static void main(String[] args) {

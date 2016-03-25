@@ -10,9 +10,9 @@
  * 2，假定，这两个元素必定有一条路径。
  */
 package gaoXiaoBang;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 public class 第二章一般树形结构_求通路长度 {
 	public static void main(String[] args) {
 		Tree t = new Tree();

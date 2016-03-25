@@ -40,9 +40,8 @@ s.replaceAll("([0-9]{4})-([0-9]{2})-([0-9]{2})","$3/$2 $1年")
 
 
  */
-
-
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class 算法14正则表达式初步_分散字符串 {
 	public static void main(String[] args) {

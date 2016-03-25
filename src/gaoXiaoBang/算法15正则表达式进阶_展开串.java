@@ -42,8 +42,6 @@ Pattern pt = Pattern.compile("([0-9]+)\\*([0-9]+)");
 
  */
 
-
-
 /*
 
 
@@ -67,7 +65,8 @@ c:/abc/xyz/k19.dat
 本题目要求是：给定一个含有简写的串，要求展开为所有文件名。
 简写的格式为：[整数..整数]
  */
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 public class 算法15正则表达式进阶_展开串 {
 	public static void main(String[] args) {
 		String s = "c:/abc/xyz/k[11..19].dat";

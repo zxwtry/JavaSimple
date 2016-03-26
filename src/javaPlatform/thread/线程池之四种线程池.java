@@ -20,7 +20,7 @@ newSingleThreadExecutor 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任
 
 
  */
-public class Java四种线程池 {
+public class 线程池之四种线程池 {
 	static class A {
 		static int a = (b = 3);
 		static int b;

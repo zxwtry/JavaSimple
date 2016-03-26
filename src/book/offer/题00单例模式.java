@@ -143,6 +143,22 @@ public class 题00单例模式 {
 		}
 	}
 	
+	// 这种方法叫双重校验锁 ， 推荐使用这种方法来进行单例模式的书写
+	static class MySingleton5 {
+		private volatile static MySingleton5 single;
+		private MySingleton5() {}
+		public static MySingleton5 getSingleton() {
+			if (null == single) {
+				synchronized(MySingleton5.class) {
+					if (null == single) {
+						single = new MySingleton5();
+					}
+				}
+			}
+			return single;
+		}
+	}
+ 	
 }
 
 class MySingletonOut {

@@ -3,6 +3,7 @@ package javaPlatform.thread;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
+import java.util.concurrent.ThreadFactory;
 
 import org.junit.Test;
 
@@ -29,16 +30,51 @@ public class Java四种线程池 {
 		}
 	}
 	public static void main(String[] args) {
-//		myNewCachedThreadPool();
+		myNewCachedThreadPool();
 //		myNewFixedThreadPool();
 //		myScheduledThreadPool1();
-		myScheduledThreadPool2();
+//		myScheduledThreadPool2();
 //		mySingleThreadPool();
 //		System.out.println("ABCDEFGHIJK".substring(2, 3));
 	}  	//end of main
 	
+	
+	static class MyThreadFactory implements ThreadFactory {
+
+		@Override
+		public Thread newThread(Runnable r) {
+			Thread newThread = new Thread(r);
+			return newThread;
+		}
+		
+	}
+	
 	static void myNewCachedThreadPool () {
 		java.util.concurrent.ExecutorService cachedThreadPool = java.util.concurrent.Executors.newCachedThreadPool();  
+		ThreadFactory myThreadFactory = new MyThreadFactory();
+		java.util.concurrent.ExecutorService myCachedThreadPool = 
+				java.util.concurrent.Executors.newCachedThreadPool(myThreadFactory);
+		
+		for (int i = 0; i < 10; i ++) {
+			final int index = i;
+			
+			myCachedThreadPool.execute(new Runnable() {
+
+				@Override
+				public void run() {
+					try {
+						Thread.sleep(1500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					System.out.println("Before  ThreadName:"+Thread.currentThread().getName()+"\t...\t"+"ThreadID:"+Thread.currentThread().getId()+"\t...\t"+index);
+				} 
+				
+			});
+		}
+		
+		System.out.println("=================");
+		
 		for (int i = 0; i < 10; i++) {  
 			final int index = i;  
 			  

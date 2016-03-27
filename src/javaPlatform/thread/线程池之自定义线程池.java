@@ -15,11 +15,11 @@ import java.util.LinkedList;
 public class 线程池之自定义线程池 {
 	public static void main(String[] args) {
 		MyThreadPool threadPool = new MyThreadPool(4);
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(1000);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 		for (int i = 0; i < 7; i ++) {
 			final int index = i;
 			

@@ -4,7 +4,9 @@ public class 枚举枚举各种类型 {
 	public static void main(String[] args) {
 //		Example1.main(null);
 //		Example2.main(null);
-		Example3.main(null);
+//		Example3.main(null);
+		Example4.main(null);
+		System.out.println(Food.Coffee.BLACK_COFFEE.toString());
 	}
 	/**
 	 * 	用法一：常量
@@ -100,4 +102,80 @@ public class 枚举枚举各种类型 {
 	 * 	用法四：覆盖枚举的方法
 	 * 	toString
 	 */
+	static class Example4 {
+		public static void main(String[] args) {
+			System.out.println(Color.RED.toString());
+		}
+		
+		public enum Color {
+			RED("红色", 1), GREEN("绿色", 2), BLANK("白色", 3), YELLO("黄色", 4);
+	        // 成员变量
+	        private String name;
+	        private int index;
+
+	        // 构造方法
+	        private Color(String name, int index) {
+	            this.name = name;
+	            this.index = index;
+	        }
+
+	        // 覆盖方法
+	        @Override
+	        public String toString() {
+	            return this.index + "_" + this.name;
+	        }
+		}
+	}
+	
+	/**
+	 * 	方法五：实现接口
+	 * 	所有的枚举都继承自java.lang.Enum类
+	 * 	由于java是单继承，所以枚举对象不能再继承其他类
+	 */
+	static interface Behavior {
+		void print();
+		String getInfo();
+	}
+	static enum Color implements Behavior {
+		RED("红色", 1), GREEN("绿色", 2), BLANK("白色", 3), YELLO("黄色", 4);
+
+		private String name;
+        private int index;
+
+        // 构造方法
+        private Color(String name, int index) {
+            this.name = name;
+            this.index = index;
+        }
+
+        // 接口方法
+        @Override
+        public String getInfo() {
+            return this.name;
+        }
+
+        // 接口方法
+        @Override
+        public void print() {
+            System.out.println(this.index + ":" + this.name);
+        }
+	}
+	
+	/**
+	 * 	方法六：使用接口组织枚举
+	 */
+	static interface Food {
+		enum Coffee implements Food {
+			BLACK_COFFEE, DECAE_COFFEE, CAPUCCINO
+		}
+		enum Dessert implements Food {
+			FRUIT, CAKE, GEIATO
+		}
+	}
+	
+	/**
+	 * 	方法七：枚举集合的使用
+	 * 	java.util.EnumSet和java.util.EnumMap是两个枚举集合
+	 */
+	
 }

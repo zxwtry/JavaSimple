@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 
  */
-public class hduXCOMEnemyUnknown {
+public class hdu4536XCOMEnemyUnknown {
 	static int n , m , k , zhou[], kong[], gong[][];
 	static int finalTimes = Integer.MIN_VALUE;
 	public static void main(String[] args) {

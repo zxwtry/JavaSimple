@@ -12,7 +12,7 @@ public class 华为数据分类处理 {
 		Scanner in = new Scanner(System.in);
 		int ic, rc;
 		long i[], r[];
-		while(in.hasNext()){
+		while(in.hasNext()) {
 			ic = in.nextInt();
 			i = new long[ic];
 			for (int index = 0; index < ic; index ++) {

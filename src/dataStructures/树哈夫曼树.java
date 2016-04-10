@@ -19,7 +19,7 @@ class Node implements Comparable<Node> {
 
 public class Ê÷¹ş·òÂüÊ÷ {
 	public static void main(String[] args) {
-		ArrayList<Integer> alk = new ArrayList<Integer>();
+//		ArrayList<Integer> alk = new ArrayList<Integer>();
 		
 		
 		int[] arrInt = new int[]{3, 2, 4, 5, 9, 7, 3};

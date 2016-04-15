@@ -8,14 +8,11 @@ import java.util.Scanner;
 class Node implements Comparable<Node> {
 	int weight;
 	Node left, right;
-	
 	@Override
 	public int compareTo(Node o) {
 		return this.weight - o.weight;
 	}
-	
 }
-
 
 public class Ê÷¹ş·òÂüÊ÷ {
 	public static void main(String[] args) {

@@ -2,12 +2,13 @@ package blog.random;
 /*
 
 
-题目也不难。假设对于一个英文单词，我们可以用简写的形式表示，比如international，就是i11l， apple，就是a3e。
-那么给你一个文档，包含了很多的单词。再给一个缩写，那么这个缩写是否唯一对应一个单词。
+锟斤拷目也锟斤拷锟窖★拷锟斤拷锟斤拷锟斤拷锟揭伙拷锟接拷牡锟斤拷剩锟斤拷锟斤拷强锟斤拷锟斤拷眉锟叫达拷锟斤拷锟绞斤拷锟绞撅拷锟斤拷锟斤拷锟絠nternational锟斤拷锟斤拷锟斤拷i11l锟斤拷 apple锟斤拷锟斤拷锟斤拷a3e锟斤拷
+锟斤拷么锟斤拷锟斤拷一锟斤拷锟侥碉拷锟斤拷锟斤拷锟斤拷锟剿很讹拷牡锟斤拷省锟斤拷俑锟揭伙拷锟斤拷锟叫达拷锟斤拷锟矫达拷锟斤拷锟斤拷写锟角凤拷唯一锟斤拷应一锟斤拷锟斤拷锟绞★拷
 
 
  */
-public class 单词缩写查重 {
+public class 锟斤拷锟斤拷锟斤拷写锟斤拷锟斤拷 {
+	
 	public static void main(String[] args) {
 		String[] str1 = {"international", "apple", "apple", "internbtional"};
 		String str2 = "i11l", str3 = "a3e";
